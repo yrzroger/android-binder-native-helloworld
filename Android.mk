@@ -6,8 +6,6 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
                 IHelloWorldService.cpp \
-                BnHelloWorldService.cpp \
-                BpHelloWorldService.cpp \
                 HelloWorldService.cpp
                 
 LOCAL_SHARED_LIBRARIES := \

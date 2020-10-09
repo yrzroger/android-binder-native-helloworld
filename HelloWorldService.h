@@ -1,7 +1,7 @@
 #ifndef ANDROID_HELLOWORLDSERVICE_H
 #define ANDROID_HELLOWORLDSERVICE_H
 
-#include <BnHelloWorldService.h>
+#include <IHelloWorldService.h>
 #include <utils/Log.h>
 
 namespace android {
@@ -14,6 +14,7 @@ public:
     
     // 具体实现服务接口的方法
     virtual status_t helloWorld(const char *str);
+    virtual status_t foo();
     
     // 调用BnHelloWorldService的onTransact方法
     virtual status_t onTransact(uint32_t code,

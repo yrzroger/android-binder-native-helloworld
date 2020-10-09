@@ -1,6 +1,8 @@
+//#define LOG_NDEBUG 0
+#define LOG_TAG "HelloWorldService"
+
 #include <binder/IServiceManager.h>
 #include <binder/IPCThreadState.h>
-#include <BnHelloWorldService.h>
 #include <HelloWorldService.h>
 #include <utils/Log.h>
 
@@ -14,6 +16,11 @@ void HelloWorldService::instantiate() {
 status_t HelloWorldService::helloWorld(const char *str) {
     ALOGI("%s\n", str);
     printf("%s\n", str);
+    return NO_ERROR;
+}
+
+status_t HelloWorldService::foo() {
+    printf("call foo function !!!!\n");
     return NO_ERROR;
 }
 

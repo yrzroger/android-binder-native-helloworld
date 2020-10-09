@@ -1,4 +1,6 @@
 # android-binder-native-helloworld
+# test on Android Q platform
+
 build binder service（HelloWorldService）based on Android Native Service Framework
 
 工程简介：

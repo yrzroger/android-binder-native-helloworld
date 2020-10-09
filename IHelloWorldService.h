@@ -5,11 +5,6 @@
 
 namespace android {
 
-// 定义HelloWorldService使用的RPC代码
-enum {
-    HW_HELLOWORLD = IBinder::FIRST_CALL_TRANSACTION,
-};
-
 // 定义HelloWorldService服务接口
 class IHelloWorldService : public IInterface {
 public:
@@ -18,6 +13,19 @@ public:
     
     // 声明服务接口函数
     virtual status_t helloWorld(const char *str) = 0;
+    
+    virtual status_t foo() = 0;
+};
+
+
+// 定义HelloWorldService服务Stub
+class BnHelloWorldService : public BnInterface<IHelloWorldService> {
+public:
+    // 重新定义处理RPC代码的onTransact()方法
+    virtual status_t onTransact(uint32_t code,
+                                const Parcel& data,
+                                Parcel* reply,
+                                uint32_t flags = 0);
 };
 
 }; // namespace android

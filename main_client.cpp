@@ -1,3 +1,4 @@
+//#define LOG_NDEBUG 0
 #define LOG_TAG "main_client"
 
 #include <binder/IPCThreadState.h>
@@ -30,6 +31,9 @@ int main(int argc, char *argv[])
         sHelloWorldService->helloWorld("Hello world !");
     else
         sHelloWorldService->helloWorld(argv[1]);
+    
+    
+    sHelloWorldService->foo();
     
     return 0;
 }

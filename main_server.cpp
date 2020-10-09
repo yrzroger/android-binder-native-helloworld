@@ -1,3 +1,4 @@
+//#define LOG_NDEBUG 0
 #define LOG_TAG "main_server"
 
 #include <binder/IPCThreadState.h>
