@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     sp<IServiceManager> sm = defaultServiceManager();
     sp<IBinder> b;
     sp<IHelloWorldService> sHelloWorldService;
-    
+
     do {
         b = sm->getService(String16("android.native.helloworld"));
         if(b != 0)
@@ -27,6 +27,10 @@ int main(int argc, char *argv[])
     
     sHelloWorldService = interface_cast<IHelloWorldService>(b);
     
+    fprintf(stderr, "--------------------------------------------\n");
+    fprintf(stderr, "client run on process(pid=%d)\n", getpid());
+    fprintf(stderr, "--------------------------------------------\n\n");
+
     if(argc == 1)
         sHelloWorldService->helloWorld("Hello world !");
     else

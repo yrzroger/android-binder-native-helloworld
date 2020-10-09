@@ -17,5 +17,7 @@ int main(int argc, char *agrv[])
     ALOGI("HelloWorldService server is starting now");
     IPCThreadState::self()->joinThreadPool();
     
+    fprintf(stderr, "server run on process(pid=%d) \n", getpid());
+    
     return 0;
 }

@@ -15,12 +15,12 @@ void HelloWorldService::instantiate() {
 
 status_t HelloWorldService::helloWorld(const char *str) {
     ALOGI("%s\n", str);
-    printf("%s\n", str);
+    printf("helloWorld function run on process(pid=%d), show string: %s\n", getpid(), str);
     return NO_ERROR;
 }
 
 status_t HelloWorldService::foo() {
-    printf("call foo function !!!!\n");
+    printf("foo function run on process(pid=%d)\n", getpid());
     return NO_ERROR;
 }
 
