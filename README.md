@@ -7,7 +7,11 @@ build binder service（HelloWorldService）based on Android Native Service Frame
 在Android平台中，Service Framework大致由两大部分构成，一部分是使用C++语言编写的本地服务框架，另一部分是使用Java语言编写的Java服务框架。该工程基于本地服务框架写作了HelloWorldService，基于Binder IPC机制实现Android平台中的进程间通信。
 
 HelloWorldService基本结构：
+
+
 <img src="https://github.com/yrzroger/android-binder-native-helloworld/blob/master/HelloWorldService.png" width="720px" />
+
+
 
 使用方法：
 1. 将工程源码拷贝到Android源码android\external目录下；
