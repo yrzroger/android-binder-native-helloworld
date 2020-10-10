@@ -12,12 +12,17 @@ using namespace android;
 
 int main(int argc, char *agrv[])
 {
+    
+    fprintf(stderr, "--------------------------------------------\n");
+    fprintf(stderr, "server run on process(pid=%d)\n", getpid());
+    fprintf(stderr, "--------------------------------------------\n\n");
+    
     HelloWorldService::instantiate();
     ProcessState::self()->startThreadPool();
     ALOGI("HelloWorldService server is starting now");
     IPCThreadState::self()->joinThreadPool();
     
-    fprintf(stderr, "server run on process(pid=%d) \n", getpid());
+    
     
     return 0;
 }
